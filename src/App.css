@@ -1,81 +1,88 @@
-:root {
-  --aws-orange: #ff9900;
-  --bg: #f7f8fa;
-  --card: #ffffff;
-  --muted: #666;
-}
-
 body {
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: var(--bg);
-  color: #222;
-}
-
-.page {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 1.5rem;
-}
-
-.hero {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(90deg, rgba(255,153,0,0.06), rgba(0,122,204,0.03));
-  border-radius: 8px;
-}
-
-.hero h1 {
-  margin: 0;
-  color: var(--aws-orange);
-  font-size: 2.2rem;
-}
-
-.subtitle {
-  margin-top: 0.5rem;
-  color: var(--muted);
-}
-
-.content {
-  margin-top: 1.5rem;
-  background: var(--card);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(20,20,20,0.04);
-}
-
-.features {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.feature {
-  flex: 1 1 200px;
-  background: #fbfbfb;
-  border-radius: 6px;
-  padding: 1rem;
-  border: 1px solid rgba(0,0,0,0.03);
+.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.action {
+.card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  width: 90%;
+  max-width: 450px;
   text-align: center;
-  margin-top: 1.5rem;
 }
 
-.cta {
-  display: inline-block;
-  padding: 0.65rem 1rem;
-  border-radius: 6px;
-  background: var(--aws-orange);
+h1 {
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #777;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+input[type="file"] {
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #667eea;
   color: white;
-  text-decoration: none;
-  font-weight: 600;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
 }
 
-.footer {
-  margin-top: 1.5rem;
-  text-align: center;
-  color: var(--muted);
+button:hover {
+  background-color: #5a6fd6;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.preview img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-top: 20px;
+  border-radius: 12px;
+  border: 2px solid #eee;
+}
+
+.result {
+  margin-top: 25px;
+  background: #f9f9ff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.confidence {
+  color: #555;
+  margin-top: 5px;
 }
