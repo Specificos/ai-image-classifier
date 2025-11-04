@@ -22,7 +22,7 @@ function App() {
       const base64 = reader.result.split(",")[1];
       try {
         const response = await fetch(
-          "https://73pv8qfwk3.execute-api.ap-southeast-2.amazonaws.com/prod/analyze", // your API Gateway endpoint
+          "https://73pv8qfwk3.execute-api.ap-southeast-2.amazonaws.com/prod/analyze",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -30,7 +30,8 @@ function App() {
           }
         );
         const data = await response.json();
-        setResult(data);
+        const parsedData = JSON.parse(data.body);
+        setResult(parsedData);
       } catch (error) {
         console.error(error);
         alert("Error analyzing image.");
@@ -43,7 +44,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="card">
-        <h1>🧠 AI Image Classifier</h1>
+        <h1>AI Image Classifier</h1>
         <p>Upload an image and let AI predict what it sees.</p>
 
         <input type="file" accept="image/*" onChange={handleFileChange} />
@@ -59,11 +60,13 @@ function App() {
 
         {result && (
           <div className="result">
-            <h3>Prediction Result:</h3>
-            <p className="label">{result.label}</p>
-            <p className="confidence">
-              Confidence: {result.confidence.toFixed(2)}%
-            </p>
+            <h3>Prediction:</h3>
+            <p>{result.label ? result.label : "No label detected"}</p>
+            {result.confidence !== undefined ? (
+              <p>Confidence: {result.confidence.toFixed(2)}%</p>
+            ) : (
+              <p>Confidence: N/A</p>
+            )}
           </div>
         )}
       </div>
