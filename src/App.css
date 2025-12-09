@@ -1,88 +1,134 @@
-body {
+/* ------------------------------
+   GLOBAL PAGE STYLES
+--------------------------------*/
+body, html {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
+/* ------------------------------
+   MAIN PAGE CONTAINER
+--------------------------------*/
 .app-container {
   width: 100%;
+  max-width: 480px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* ------------------------------
+   CARD / PANEL
+--------------------------------*/
 .card {
-  background-color: #fff;
+  background: #ffffff;
+  width: 100%;
+  padding: 32px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  padding: 40px;
-  width: 90%;
-  max-width: 450px;
   text-align: center;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* ------------------------------
+   TEXT STYLES
+--------------------------------*/
 h1 {
-  color: #4a4a4a;
+  font-size: 26px;
+  color: #111827;
   margin-bottom: 10px;
 }
 
 p {
-  color: #777;
   font-size: 15px;
-  margin-bottom: 25px;
-}
-
-input[type="file"] {
+  color: #4b5563;
   margin-bottom: 15px;
 }
 
+/* ------------------------------
+   FILE INPUT
+--------------------------------*/
+input[type="file"] {
+  margin: 16px 0;
+}
+
+/* ------------------------------
+   BUTTONS
+--------------------------------*/
 button {
-  background-color: #667eea;
+  background: #2563eb;
   color: white;
   border: none;
-  padding: 12px 25px;
+  padding: 12px 16px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s ease;
+  font-size: 15px;
+  margin: 8px 6px;
+  transition: 0.25s;
 }
 
 button:hover {
-  background-color: #5a6fd6;
+  background: #1d4ed8;
 }
 
 button:disabled {
-  background-color: #ccc;
+  background: #9ca3af;
   cursor: not-allowed;
 }
 
+/* logout button */
+.logout-btn {
+  background: #ef4444;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ------------------------------
+   IMAGE PREVIEW
+--------------------------------*/
 .preview img {
+  margin-top: 16px;
   width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-  margin-top: 20px;
+  max-height: 260px;
+  object-fit: cover;
   border-radius: 12px;
   border: 2px solid #eee;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* ------------------------------
+   RESULT BOX
+--------------------------------*/
 .result {
-  margin-top: 25px;
-  background: #f9f9ff;
-  padding: 15px;
+  margin-top: 20px;
+  padding: 16px;
+  background: #f3f4f6;
   border-radius: 10px;
+  text-align: left;
 }
 
-.label {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
+/* ------------------------------
+   ADMIN-ONLY SECTION
+--------------------------------*/
+.admin-box {
+  margin-top: 20px;
+  padding: 16px;
+  background: #e0f2fe;
+  border-radius: 10px;
+  color: #0369a1;
+  text-align: left;
 }
 
-.confidence {
-  color: #555;
-  margin-top: 5px;
+.admin-box h3 {
+  margin-bottom: 10px;
 }
